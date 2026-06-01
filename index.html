@@ -579,25 +579,29 @@
     }
 
     try {
-      // Backend'e gönder
-      await fetch('https://mustakitbackend-production.up.railway.app/studio/order', {
+      // Backend'e gönder — mail at + LS checkout linki al
+      const response = await fetch('https://mustakitbackend-production.up.railway.app/studio/order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       })
-    } catch(err) {
-      console.log('Backend hatası, devam ediyoruz', err)
-    }
 
-    // Lemon Squeezy linkini prefill ile oluştur
-    const lsBaseUrl = 'LEMONSQUEEZY_CHECKOUT_URL'
-    const lsUrl = `${lsBaseUrl}?checkout[email]=${encodeURIComponent(data.email)}&checkout[name]=${encodeURIComponent(data.name)}&checkout[custom][phone]=${encodeURIComponent(data.phone)}&checkout[custom][city]=${encodeURIComponent(data.city)}&checkout[custom][area]=${encodeURIComponent(data.area)}`
-    
-    document.getElementById('paymentLink').href = lsUrl
-    btn.disabled = false
-    btn.textContent = 'Sipariş Ver — 1.250 TL Öde →'
-    
-    openModal()
+      const result = await response.json()
+
+      if (result.checkoutUrl) {
+        document.getElementById('paymentLink').href = result.checkoutUrl
+        btn.disabled = false
+        btn.textContent = 'Sipariş Ver — 1.250 TL Öde →'
+        openModal()
+      } else {
+        throw new Error('Checkout linki alınamadı')
+      }
+    } catch(err) {
+      console.error('Hata:', err)
+      btn.disabled = false
+      btn.textContent = 'Sipariş Ver — 1.250 TL Öde →'
+      alert('Bir hata oluştu. Lütfen tekrar deneyin veya info@mustakit.com adresine yazın.')
+    }
   })
 
   // Ödeme başarılıysa (LS webhook tetiklenir gerçekte, burada link tıklandıktan sonra success göster)
