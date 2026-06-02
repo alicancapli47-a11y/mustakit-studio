@@ -6,7 +6,15 @@
   <title>Müstakit Studio — Emlak Videosu Siparişi</title>
   <meta name="description" content="Arsanız için profesyonel tanıtım videosu. 1-2 gün içinde teslim. 2500 TL." />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
+  <script src="https://app.lemonsqueezy.com/js/lemon.js" defer>
+  function handlePayment() {
+    setTimeout(() => {
+      closeModal()
+      document.getElementById('orderForm').style.display = 'none'
+      document.getElementById('successBox').classList.add('show')
+    }, 1500)
+  }
+</script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -245,12 +253,12 @@
             <div class="payment-half">
               <div class="payment-half-pct">%50</div>
               <div class="payment-half-label">Sipariş verirken</div>
-              <div class="payment-half-amount">1.250 TL</div>
+              <div class="payment-half-amount">500 TL</div>
             </div>
             <div class="payment-half">
-              <div class="payment-half-pct">%50</div>
+              <div class="payment-half-pct">%80</div>
               <div class="payment-half-label">Teslimatta</div>
-              <div class="payment-half-amount">1.250 TL</div>
+              <div class="payment-half-amount">2.000 TL</div>
             </div>
           </div>
         </div>
@@ -587,19 +595,29 @@
 
       const result = await response.json()
 
-      if (result.success) {
-        document.getElementById('orderForm').style.display = 'none'
-        document.getElementById('successBox').classList.add('show')
+      if (result.checkoutUrl) {
+        document.getElementById('paymentLink').href = result.checkoutUrl
+        btn.disabled = false
+        btn.textContent = 'Devam Et →'
+        openModal()
       } else {
         throw new Error(result.error || 'Hata oluştu')
       }
     } catch(err) {
       console.error('Hata:', err)
       btn.disabled = false
-      btn.textContent = 'Talep Gönder →'
-      alert('Bir hata oluştu. Lütfen tekrar deneyin veya info@mustakit.com adresine yazın.')
+      btn.textContent = 'Devam Et →'
+      alert('Bir hata oluştu. Lütfen tekrar deneyin veya tvarzmedya@gmail.com adresine yazın.')
     }
   })
+
+  function handlePayment() {
+    setTimeout(() => {
+      closeModal()
+      document.getElementById('orderForm').style.display = 'none'
+      document.getElementById('successBox').classList.add('show')
+    }, 1500)
+  }
 </script>
 </body>
 </html>
