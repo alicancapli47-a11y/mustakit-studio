@@ -227,7 +227,7 @@
         <h3>Profesyonel Emlak Videosu</h3>
         <p>Arsanız için tam prodüksiyon</p>
         <div class="price-amount">2.500 <span>TL</span></div>
-        <div class="price-note">KDV dahil · Tek seferlik</div>
+        <div class="price-note">KDV dahil · Tek seferlik · Ekibimiz sizinle iletişime geçecek</div>
       </div>
       <div class="price-body">
         <ul class="price-features">
@@ -452,7 +452,7 @@
 
         <div class="form-submit">
           <button type="submit" class="btn-submit" id="submitBtn">
-            Sipariş Ver — 1.250 TL Öde →
+            Talep Gönder →
           </button>
           <div class="form-guarantee">🔒 Güvenli ödeme · Kartınız korunur · İptal garantisi</div>
         </div>
@@ -579,7 +579,6 @@
     }
 
     try {
-      // Backend'e gönder — mail at + LS checkout linki al
       const response = await fetch('https://mustakitbackend-production.up.railway.app/studio/order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -588,29 +587,18 @@
 
       const result = await response.json()
 
-      if (result.checkoutUrl) {
-        document.getElementById('paymentLink').href = result.checkoutUrl
-        btn.disabled = false
-        btn.textContent = 'Sipariş Ver — 1.250 TL Öde →'
-        openModal()
+      if (result.success) {
+        document.getElementById('orderForm').style.display = 'none'
+        document.getElementById('successBox').classList.add('show')
       } else {
-        throw new Error('Checkout linki alınamadı')
+        throw new Error(result.error || 'Hata oluştu')
       }
     } catch(err) {
       console.error('Hata:', err)
       btn.disabled = false
-      btn.textContent = 'Sipariş Ver — 1.250 TL Öde →'
+      btn.textContent = 'Talep Gönder →'
       alert('Bir hata oluştu. Lütfen tekrar deneyin veya info@mustakit.com adresine yazın.')
     }
-  })
-
-  // Ödeme başarılıysa (LS webhook tetiklenir gerçekte, burada link tıklandıktan sonra success göster)
-  document.getElementById('paymentLink').addEventListener('click', function() {
-    setTimeout(() => {
-      closeModal()
-      document.getElementById('formCard').querySelector('form').style.display = 'none'
-      document.getElementById('successBox').classList.add('show')
-    }, 2000)
   })
 </script>
 </body>
