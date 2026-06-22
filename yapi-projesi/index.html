@@ -4,17 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Müstakit Studio — Yapı Projesi Videosu Siparişi</title>
-  <meta name="description" content="Arsanız için profesyonel tanıtım videosu. 1-2 gün içinde teslim. 2600 TL." />
+  <meta name="description" content="Yapı projeniz için profesyonel tanıtım videosu. Müteahhitler için. 1-2 gün içinde teslim. 3.000 TL." />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <script src="https://app.lemonsqueezy.com/js/lemon.js" defer>
-  function handlePayment() {
-    setTimeout(() => {
-      closeModal()
-      document.getElementById('orderForm').style.display = 'none'
-      document.getElementById('successBox').classList.add('show')
-    }, 1500)
-  }
-</script>
+  <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -28,15 +20,11 @@
     }
     body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); }
     h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', sans-serif; }
-
-    /* NAV */
     nav { border-bottom: 1px solid var(--border); }
     .nav-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
     .logo { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 20px; color: var(--primary); text-decoration: none; }
     .logo span { color: var(--text); font-weight: 400; font-size: 14px; }
     .nav-badge { background: var(--primary); color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
-
-    /* HERO */
     .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d1f0e 100%); color: white; padding: 80px 24px; text-align: center; }
     .hero-badge { display: inline-block; background: rgba(242,100,25,0.2); border: 1px solid rgba(242,100,25,0.5); color: #F26419; font-size: 12px; font-weight: 600; padding: 6px 16px; border-radius: 20px; margin-bottom: 24px; }
     .hero h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px; }
@@ -46,22 +34,16 @@
     .stat { text-align: center; }
     .stat-val { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 32px; font-weight: 800; color: var(--primary); }
     .stat-label { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
-
-    /* SECTIONS */
     section { padding: 80px 24px; }
     .container { max-width: 900px; margin: 0 auto; }
     .section-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--primary); margin-bottom: 10px; }
     .section-title { font-size: clamp(22px, 4vw, 34px); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 40px; }
-
-    /* HOW IT WORKS */
     .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
     .step { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; }
     .step-num { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 40px; font-weight: 800; color: var(--border); line-height: 1; margin-bottom: 16px; }
     .step-icon { font-size: 28px; margin-bottom: 12px; }
     .step-title { font-weight: 700; font-size: 15px; margin-bottom: 8px; }
     .step-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
-
-    /* PRICE */
     .price-card { border: 2px solid var(--primary); border-radius: 24px; overflow: hidden; max-width: 540px; margin: 0 auto; }
     .price-top { background: var(--primary); color: white; padding: 32px; text-align: center; }
     .price-top h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
@@ -82,17 +64,6 @@
     .payment-half-amount { font-size: 15px; font-weight: 700; margin-top: 2px; }
     .btn-order { display: block; width: 100%; background: var(--primary); color: white; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 700; padding: 16px; border-radius: 12px; border: none; cursor: pointer; transition: background 0.2s; text-align: center; text-decoration: none; }
     .btn-order:hover { background: var(--primary-dark); }
-
-    /* SAMPLES */
-    .samples { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-    .sample-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
-    .sample-thumb { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 60px; background: linear-gradient(135deg, #f0ede8, #e5dfd8); }
-    .sample-info { padding: 16px; }
-    .sample-tag { font-size: 11px; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
-    .sample-title { font-weight: 600; font-size: 14px; }
-    .sample-desc { font-size: 12px; color: var(--muted); margin-top: 4px; }
-
-    /* FORM */
     .form-section { background: var(--surface); }
     .form-card { background: white; border: 1px solid var(--border); border-radius: 24px; padding: 48px; }
     .form-title { font-size: 26px; font-weight: 800; margin-bottom: 6px; }
@@ -119,27 +90,19 @@
     .btn-submit:hover { background: var(--primary-dark); }
     .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
     .form-guarantee { font-size: 12px; color: var(--muted); }
-
-    /* SUCCESS */
     .success-box { display: none; text-align: center; padding: 48px 24px; }
     .success-box.show { display: block; }
     .success-icon { font-size: 64px; margin-bottom: 20px; }
     .success-title { font-size: 28px; font-weight: 800; margin-bottom: 12px; }
     .success-desc { font-size: 15px; color: var(--muted); max-width: 440px; margin: 0 auto 24px; line-height: 1.7; }
-
-    /* FAQ */
     .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 680px; margin: 0 auto; }
     details { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
     summary { padding: 18px 20px; font-weight: 600; font-size: 14px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
     summary::after { content: '+'; font-size: 20px; color: var(--primary); font-weight: 300; }
     details[open] summary::after { content: '−'; }
     details p { padding: 0 20px 18px; font-size: 13px; color: var(--muted); line-height: 1.7; }
-
-    /* FOOTER */
     footer { background: #1a1a1a; color: rgba(255,255,255,0.5); text-align: center; padding: 28px 24px; font-size: 13px; }
     footer a { color: var(--primary); text-decoration: none; }
-
-    /* MODAL */
     .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; padding: 24px; }
     .modal-overlay.show { display: flex; }
     .modal { background: white; border-radius: 20px; padding: 40px; max-width: 480px; width: 100%; text-align: center; }
@@ -149,7 +112,6 @@
     .btn-cancel { flex: 1; background: none; border: 1px solid var(--border); color: var(--text); font-size: 14px; font-weight: 600; padding: 12px; border-radius: 10px; cursor: pointer; }
     .btn-pay { flex: 2; background: var(--primary); color: white; border: none; font-size: 14px; font-weight: 700; padding: 12px; border-radius: 10px; cursor: pointer; }
     .btn-pay:hover { background: var(--primary-dark); }
-
     @media (max-width: 600px) {
       .form-group-row { grid-template-columns: 1fr; }
       .payment-split { grid-template-columns: 1fr; }
@@ -160,26 +122,24 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="https://mustakit.com" class="logo">Müstakit <span>Studio</span></a>
-    <div class="nav-badge">Profesyonel Video</div>
+    <div class="nav-badge">Müteahhitler İçin</div>
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
-  <div class="hero-badge">🎬 Emlak Videosu Servisi</div>
-  <h1>Arsanız için <span>profesyonel</span><br>tanıtım videosu</h1>
-  <p>Arsa bilgilerini doldurun, fotoğraflarınızı yükleyin. 1-2 iş günü içinde profesyonel tanıtım videosu ve metni hazır olsun.</p>
+  <div class="hero-badge">🏗️ Yapı Projesi Videosu</div>
+  <h1>Yapı projeniz için <span>profesyonel</span><br>proje videosu</h1>
+  <p>Kroki ve planlarınızı yükleyin, müteahhit projenizi profesyonel video ile tanıtın. 1-2 iş günü içinde teslim.</p>
   <div class="hero-stats">
     <div class="stat">
       <div class="stat-val">1-2</div>
       <div class="stat-label">İş günü teslim</div>
     </div>
     <div class="stat">
-      <div class="stat-val">2500₺</div>
+      <div class="stat-val">3000₺</div>
       <div class="stat-label">Sabit fiyat</div>
     </div>
     <div class="stat">
@@ -189,7 +149,6 @@
   </div>
 </div>
 
-<!-- HOW IT WORKS -->
 <section>
   <div class="container">
     <div class="section-tag">Nasıl Çalışır</div>
@@ -199,31 +158,30 @@
         <div class="step-num">01</div>
         <div class="step-icon">📋</div>
         <div class="step-title">Formu Doldurun</div>
-        <div class="step-desc">Arsa bilgilerini, konumu ve öne çıkan özellikleri girin. Ne kadar detaylı olursa video o kadar güçlü olur.</div>
+        <div class="step-desc">Proje bilgilerini, konumu ve öne çıkan özellikleri girin.</div>
       </div>
       <div class="step">
         <div class="step-num">02</div>
-        <div class="step-icon">📸</div>
-        <div class="step-title">Fotoğraf Yükleyin</div>
-        <div class="step-desc">Arsanızın fotoğraflarını yükleyin. Drone görüntüsü varsa link ekleyin. Ne kadar çok görsel, o kadar iyi video.</div>
+        <div class="step-icon">📐</div>
+        <div class="step-title">Kroki/Plan Yükleyin</div>
+        <div class="step-desc">Mimari kroki, plan veya teknik çizimlerinizi yükleyin.</div>
       </div>
       <div class="step">
         <div class="step-num">03</div>
         <div class="step-icon">💳</div>
         <div class="step-title">%20 Ön Ödeme Yapın</div>
-        <div class="step-desc">Sipariş onayı için 600 TL ön ödeme yapın. Kalan 2.400 TL videoyu teslim aldıktan sonra ödenir.</div>
+        <div class="step-desc">Sipariş onayı için 600 TL ön ödeme yapın. Kalan 2.400 TL teslimde ödenir.</div>
       </div>
       <div class="step">
         <div class="step-num">04</div>
         <div class="step-icon">🎬</div>
         <div class="step-title">Videonuzu Alın</div>
-        <div class="step-desc">1-2 iş günü içinde profesyonel video ve tanıtım metni e-posta ile teslim edilir.</div>
+        <div class="step-desc">1-2 iş günü içinde profesyonel video e-posta ile teslim edilir.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRICE -->
 <section style="background: var(--surface); padding: 80px 24px;">
   <div class="container">
     <div style="text-align:center; margin-bottom: 40px;">
@@ -232,17 +190,17 @@
     </div>
     <div class="price-card">
       <div class="price-top">
-        <h3>Profesyonel Emlak Videosu</h3>
-        <p>Arsanız için tam prodüksiyon</p>
+        <h3>Profesyonel Yapı Projesi Videosu</h3>
+        <p>Müteahhitler için tam prodüksiyon</p>
         <div class="price-amount">3.000 <span>TL</span></div>
-        <div class="price-note">KDV dahil · Tek seferlik · Ekibimiz sizinle iletişime geçecek</div>
+        <div class="price-note">KDV dahil · Tek seferlik</div>
       </div>
       <div class="price-body">
         <ul class="price-features">
+          <li>Kroki/plan tabanlı görselleştirme</li>
           <li>Profesyonel video montaj (30-60 saniye)</li>
-          <li>Türkçe tanıtım metni yazımı</li>
+          <li>Türkçe proje anlatım metni yazımı</li>
           <li>Müzik ve ses tasarımı</li>
-          <li>Müstakit logolu watermark</li>
           <li>HD kalite (1080p) teslim</li>
           <li>Sosyal medyaya hazır format</li>
           <li>1 revizyon hakkı</li>
@@ -268,7 +226,6 @@
   </div>
 </section>
 
-<!-- FORM -->
 <section class="form-section" id="siparis-formu">
   <div class="container">
     <div class="form-card" id="formCard">
@@ -276,8 +233,6 @@
       <p class="form-sub">Aşağıdaki formu doldurun. Siparişiniz onaylandıktan sonra 1-2 iş günü içinde videonuz hazırlanır.</p>
 
       <form id="orderForm">
-
-        <!-- İletişim -->
         <div class="form-section-title">👤 İletişim Bilgileri</div>
         <div class="form-group form-group-row">
           <div>
@@ -286,7 +241,7 @@
           </div>
           <div>
             <label>Firma / Unvan</label>
-            <input type="text" name="company" placeholder="ABC Emlak" />
+            <input type="text" name="company" placeholder="ABC İnşaat" />
           </div>
         </div>
         <div class="form-group form-group-row">
@@ -300,7 +255,6 @@
           </div>
         </div>
 
-        <!-- Arsa Bilgileri -->
         <div class="form-section-title">🏗️ Proje Bilgileri</div>
         <div class="form-group form-group-row">
           <div>
@@ -323,8 +277,8 @@
         </div>
         <div class="form-group form-group-row">
           <div>
-            <label>Köy / Mahalle</label>
-            <input type="text" name="neighborhood" placeholder="Köy veya mahalle adı" />
+            <label>Proje Adı</label>
+            <input type="text" name="projectName" placeholder="örn: Yeşil Vadi Konutları" />
           </div>
           <div>
             <label>Ada / Parsel No</label>
@@ -333,68 +287,34 @@
         </div>
         <div class="form-group form-group-row">
           <div>
-            <label>Alan (m²) <span>*</span></label>
-            <input type="number" name="area" required placeholder="örn: 500" />
+            <label>Toplam Alan (m²) <span>*</span></label>
+            <input type="number" name="area" required placeholder="örn: 2500" />
           </div>
           <div>
             <label>Proje Tipi <span>*</span></label>
             <select name="zoning" required>
               <option value="">Seçin</option>
-              <option>Konut İmarlı</option>
-              <option>Tarım Arazisi</option>
-              <option>Ticari İmarlı</option>
-              <option>Köy Yerleşim Alanı</option>
-              <option>Sanayi İmarlı</option>
-              <option>İmarsız</option>
+              <option>Konut Projesi</option>
+              <option>Villa Projesi</option>
+              <option>Site Projesi</option>
+              <option>Ticari Yapı</option>
+              <option>Karma Kullanım</option>
               <option>Diğer</option>
             </select>
           </div>
         </div>
         <div class="form-group form-group-row">
           <div>
-            <label>Satış Fiyatı (TL)</label>
-            <input type="number" name="price" placeholder="örn: 1500000" />
+            <label>Daire/Birim Sayısı</label>
+            <input type="number" name="unitCount" placeholder="örn: 24" />
           </div>
           <div>
-            <label>Arsa Tipi</label>
-            <select name="type">
-              <option value="">Seçin</option>
-              <option>Konut Arsası</option>
-              <option>Tarla</option>
-              <option>Bağ / Bahçe</option>
-              <option>Zeytinlik</option>
-              <option>Ticari Arsa</option>
-              <option>Sanayi Arsası</option>
-              <option>Diğer</option>
-            </select>
+            <label>Tahmini Teslim Tarihi</label>
+            <input type="text" name="deliveryDate" placeholder="örn: 2026 Aralık" />
           </div>
         </div>
 
-        <!-- Altyapı -->
         <div class="form-section-title">🔌 Altyapı ve Konum</div>
-        <div class="form-group">
-          <label>Mevcut Altyapı (birden fazla seçilebilir)</label>
-          <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;">
-            <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;cursor:pointer;">
-              <input type="checkbox" name="infra" value="elektrik"> Elektrik
-            </label>
-            <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;cursor:pointer;">
-              <input type="checkbox" name="infra" value="su"> Su
-            </label>
-            <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;cursor:pointer;">
-              <input type="checkbox" name="infra" value="dogalgaz"> Doğalgaz
-            </label>
-            <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;cursor:pointer;">
-              <input type="checkbox" name="infra" value="yol"> Asfalt Yol
-            </label>
-            <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;cursor:pointer;">
-              <input type="checkbox" name="infra" value="internet"> İnternet
-            </label>
-            <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;cursor:pointer;">
-              <input type="checkbox" name="infra" value="kanalizasyon"> Kanalizasyon
-            </label>
-          </div>
-        </div>
         <div class="form-group form-group-row">
           <div>
             <label>Şehir Merkezine Uzaklık</label>
@@ -410,32 +330,27 @@
           <input type="url" name="maps_link" placeholder="https://maps.google.com/..." />
         </div>
 
-        <!-- Özellikler -->
         <div class="form-section-title">✨ Öne Çıkan Özellikler</div>
         <div class="form-group">
-          <label>Manzara / Özellikler</label>
+          <label>Projenin Özellikleri</label>
           <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;">
-
             <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;cursor:pointer;"><input type="checkbox" name="features" value="Deniz Manzarası"> Deniz Manzarası</label>
-            <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;cursor:pointer;"><input type="checkbox" name="features" value="Dağ Manzarası"> Dağ Manzarası</label>
-            <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;cursor:pointer;"><input type="checkbox" name="features" value="Orman İçi"> Orman İçi</label>
-            <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;cursor:pointer;"><input type="checkbox" name="features" value="Göl Kenarı"> Göl Kenarı</label>
-            <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;cursor:pointer;"><input type="checkbox" name="features" value="Şehir Manzarası"> Şehir Manzarası</label>
-            <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;cursor:pointer;"><input type="checkbox" name="features" value="Saat Arazi"> Saat Arazi</label>
-            <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;cursor:pointer;"><input type="checkbox" name="features" value="Düz Arazi"> Düz Arazi</label>
+            <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;cursor:pointer;"><input type="checkbox" name="features" value="Otopark"> Otopark</label>
+            <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;cursor:pointer;"><input type="checkbox" name="features" value="Yüzme Havuzu"> Yüzme Havuzu</label>
+            <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;cursor:pointer;"><input type="checkbox" name="features" value="Peyzaj"> Peyzaj</label>
+            <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;cursor:pointer;"><input type="checkbox" name="features" value="Sosyal Tesis"> Sosyal Tesis</label>
+            <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:400;cursor:pointer;"><input type="checkbox" name="features" value="Güvenlik"> 7/24 Güvenlik</label>
           </div>
         </div>
         <div class="form-group">
-          <label>Arsayı Anlatın <span>*</span></label>
-          <textarea name="description" required placeholder="Arsanızın öne çıkan özelliklerini anlatın. Yatırım avantajı, çevresindeki gelişmeler, ulaşım kolaylıkları, manzara detayları — ne kadar detaylı yazarsanız video o kadar güçlü olur." rows="5"></textarea>
+          <label>Projeyi Anlatın <span>*</span></label>
+          <textarea name="description" required placeholder="Projenizin öne çıkan özelliklerini anlatın. Konsept, hedef alıcı kitlesi, yatırım avantajları — ne kadar detaylı yazarsanız video o kadar güçlü olur." rows="5"></textarea>
         </div>
         <div class="form-group">
           <label>Videoda Özellikle Vurgulanmasını İstediğiniz</label>
-          <textarea name="highlights" placeholder="Örn: Yol genişletme projesi planlanıyor, 2 km'de yeni hastane yapılacak, değer artışı bekleniyor..." rows="3"></textarea>
+          <textarea name="highlights" placeholder="Örn: Şehir merkezine yakınlık, ödeme planı avantajları, teslim tarihi..." rows="3"></textarea>
         </div>
 
-        <!-- Medya -->
-        
         <div class="form-section-title">📐 Kroki ve Plan Yükleme</div>
         <div class="form-group">
           <div class="upload-area" onclick="document.getElementById('krokiInput').click()">
@@ -451,7 +366,7 @@
         <div class="form-group">
           <div class="upload-area" onclick="document.getElementById('photoInput').click()">
             <div class="upload-icon">🖼️</div>
-            <div class="upload-text">Fotoğraf yüklemek için tıklayın</div>
+            <div class="upload-text">Saha fotoğrafı veya render yüklemek için tıklayın</div>
             <div class="upload-sub">JPG, PNG formatları · Maksimum 10 MB · Birden fazla seçilebilir</div>
           </div>
           <input type="file" id="photoInput" class="upload-input" multiple accept="image/*" onchange="handleFiles(this)" />
@@ -472,13 +387,12 @@
 
         <div class="form-submit">
           <button type="submit" class="btn-submit" id="submitBtn">
-            Talep Gönder →
+            600 TL Ön Ödeme Yap →
           </button>
           <div class="form-guarantee">🔒 Güvenli ödeme · Kartınız korunur · İptal garantisi</div>
         </div>
       </form>
 
-      <!-- Başarı mesajı -->
       <div class="success-box" id="successBox">
         <div class="success-icon">🎬</div>
         <div class="success-title">Siparişiniz alındı!</div>
@@ -489,7 +403,6 @@
   </div>
 </section>
 
-<!-- FAQ -->
 <section>
   <div class="container">
     <div style="text-align:center;margin-bottom:40px;">
@@ -502,36 +415,30 @@
         <p>Siparişiniz ve ön ödemeniz alındıktan sonra 1-2 iş günü içinde videonuz hazırlanır ve e-posta adresinize gönderilir.</p>
       </details>
       <details>
-        <summary>Kaç fotoğraf yüklemeliyim?</summary>
-        <p>En az 5-6 fotoğraf öneriyoruz. Ne kadar çok ve kaliteli fotoğraf yüklerseniz video o kadar iyi olur. Drone görüntüsü varsa mutlaka ekleyin.</p>
+        <summary>Hangi dosya formatlarını yükleyebilirim?</summary>
+        <p>PDF, JPG, PNG ve DWG formatlarındaki kroki ve planları yükleyebilirsiniz.</p>
       </details>
       <details>
         <summary>Revizyon hakkım var mı?</summary>
-        <p>Evet, her siparişte 1 revizyon hakkınız bulunmaktadır. Teslim edilen videoyu inceledikten sonra değişiklik talep edebilirsiniz.</p>
+        <p>Evet, her siparişte 1 revizyon hakkınız bulunmaktadır.</p>
       </details>
       <details>
         <summary>Videoyu nasıl kullanabilirim?</summary>
-        <p>Video tamamen size aittir. Instagram, YouTube, WhatsApp, sahibinden.com ve diğer tüm platformlarda kullanabilirsiniz.</p>
+        <p>Video tamamen size aittir. Satış ofisinizde, sosyal medyada ve emlak portallarında kullanabilirsiniz.</p>
       </details>
       <details>
         <summary>Kalan 2.400 TL'yi ne zaman ödeyeceğim?</summary>
-        <p>Videonuzu teslim aldıktan ve memnun kaldıktan sonra kalan 2.400 TL ödeme için size link göndereceğiz.</p>
-      </details>
-      <details>
-        <summary>Memnun kalmazsam ne olur?</summary>
-        <p>1 revizyon hakkınızı kullandıktan sonra hâlâ memnun değilseniz, durumu değerlendirip çözüm üretiriz. İletişime geçin.</p>
+        <p>Videonuzu teslim aldıktan ve memnun kaldıktan sonra kalan 2.400 TL için size link göndereceğiz.</p>
       </details>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p>© 2025 <a href="https://mustakit.com">Müstakit</a> · Müstakil evinizi yaptırmanın en şeffaf yolu</p>
-  <p style="margin-top:8px;">studio.mustakit.com — Emlak Video Servisi</p>
+  <p style="margin-top:8px;">studio.mustakit.com — Yapı Projesi Video Servisi</p>
 </footer>
 
-<!-- MODAL - Ödeme Onayı -->
 <div class="modal-overlay" id="paymentModal">
   <div class="modal">
     <div style="font-size:40px;margin-bottom:16px;">💳</div>
@@ -545,36 +452,33 @@
 </div>
 
 <script>
-  // Dosya yükleme
   let uploadedFiles = []
   let krokiFiles = []
+
   function handleFiles(input) {
     const files = Array.from(input.files)
-    uploadedFiles = [...uploadedFiles, ...files]
+    uploadedFiles = uploadedFiles.concat(files)
     const list = document.getElementById('fileList')
-    list.innerHTML = uploadedFiles.map(f => `<div class="file-tag">📎 ${f.name}</div>`).join('')
+    list.innerHTML = uploadedFiles.map(function(f) { return '<div class="file-tag">📎 ' + f.name + '</div>' }).join('')
   }
 
   function handleKrokiFiles(input) {
     const files = Array.from(input.files)
-    krokiFiles = [...krokiFiles, ...files]
+    krokiFiles = krokiFiles.concat(files)
     const list = document.getElementById('krokiFileList')
-    list.innerHTML = krokiFiles.map(f => `<div class="file-tag">📐 ${f.name}</div>`).join('')
+    list.innerHTML = krokiFiles.map(function(f) { return '<div class="file-tag">📐 ' + f.name + '</div>' }).join('')
   }
 
-  // Altyapı checkbox'larını topla
   function getCheckedValues(name) {
-    return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(el => el.value)
+    return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked')).map(function(el) { return el.value })
   }
 
-  // Modal
   function openModal() { document.getElementById('paymentModal').classList.add('show') }
   function closeModal() { document.getElementById('paymentModal').classList.remove('show') }
 
-  // Form submit
   document.getElementById('orderForm').addEventListener('submit', async function(e) {
     e.preventDefault()
-    
+
     const btn = document.getElementById('submitBtn')
     btn.disabled = true
     btn.textContent = 'Gönderiliyor...'
@@ -587,13 +491,12 @@
       phone: formData.get('phone'),
       city: formData.get('city'),
       district: formData.get('district'),
-      neighborhood: formData.get('neighborhood'),
+      projectName: formData.get('projectName'),
       parcel: formData.get('parcel'),
       area: formData.get('area'),
       zoning: formData.get('zoning'),
-      price: formData.get('price'),
-      type: formData.get('type'),
-      infra: getCheckedValues('infra').join(', '),
+      unitCount: formData.get('unitCount'),
+      deliveryDate: formData.get('deliveryDate'),
       distance_city: formData.get('distance_city'),
       distance_sea: formData.get('distance_sea'),
       maps_link: formData.get('maps_link'),
@@ -602,10 +505,10 @@
       highlights: formData.get('highlights'),
       drone_link: formData.get('drone_link'),
       notes: formData.get('notes'),
-      files: uploadedFiles.map(f => f.name).join(', '),
-      krokiFiles: krokiFiles.map(f => f.name).join(', '),
+      files: uploadedFiles.map(function(f) { return f.name }).join(', '),
+      krokiFiles: krokiFiles.map(function(f) { return f.name }).join(', '),
       serviceType: 'yapi_projesi',
-      source: 'studio.mustakit.com',
+      source: 'studio.mustakit.com/yapi-projesi',
     }
 
     try {
@@ -625,7 +528,7 @@
       } else {
         throw new Error(result.error || 'Hata oluştu')
       }
-    } catch(err) {
+    } catch (err) {
       console.error('Hata:', err)
       btn.disabled = false
       btn.textContent = '600 TL Ön Ödeme Yap →'
@@ -633,13 +536,13 @@
     }
   })
 
-  function handlePayment() {
-    setTimeout(() => {
+  document.getElementById('paymentLink').addEventListener('click', function() {
+    setTimeout(function() {
       closeModal()
       document.getElementById('orderForm').style.display = 'none'
       document.getElementById('successBox').classList.add('show')
     }, 1500)
-  }
+  })
 </script>
 </body>
 </html>
