@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Müstakit Studio — Yapı Projesi Videosu Siparişi</title>
-  <meta name="description" content="Yapı projeniz için profesyonel tanıtım videosu. Müteahhitler için. 1-2 gün içinde teslim. 3.000 TL." />
+  <meta name="description" content="Yapı projeniz için profesyonel tanıtım videosu. Müteahhitler için. 1-2 gün içinde teslim. 5.000 TL." />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
   <style>
@@ -139,7 +139,7 @@
       <div class="stat-label">İş günü teslim</div>
     </div>
     <div class="stat">
-      <div class="stat-val">3000₺</div>
+      <div class="stat-val">5000₺</div>
       <div class="stat-label">Sabit fiyat</div>
     </div>
     <div class="stat">
@@ -170,7 +170,7 @@
         <div class="step-num">03</div>
         <div class="step-icon">💳</div>
         <div class="step-title">%20 Ön Ödeme Yapın</div>
-        <div class="step-desc">Sipariş onayı için 600 TL ön ödeme yapın. Kalan 2.400 TL teslimde ödenir.</div>
+        <div class="step-desc">Sipariş onayı için 1.000 TL ön ödeme yapın. Kalan 4.000 TL teslimde ödenir.</div>
       </div>
       <div class="step">
         <div class="step-num">04</div>
@@ -192,7 +192,7 @@
       <div class="price-top">
         <h3>Profesyonel Yapı Projesi Videosu</h3>
         <p>Müteahhitler için tam prodüksiyon</p>
-        <div class="price-amount">3.000 <span>TL</span></div>
+        <div class="price-amount">5.000 <span>TL</span></div>
         <div class="price-note">KDV dahil · Tek seferlik</div>
       </div>
       <div class="price-body">
@@ -211,12 +211,12 @@
             <div class="payment-half">
               <div class="payment-half-pct">%20</div>
               <div class="payment-half-label">Sipariş verirken</div>
-              <div class="payment-half-amount">600 TL</div>
+              <div class="payment-half-amount">1.000 TL</div>
             </div>
             <div class="payment-half">
               <div class="payment-half-pct">%80</div>
               <div class="payment-half-label">Teslimatta</div>
-              <div class="payment-half-amount">2.400 TL</div>
+              <div class="payment-half-amount">4.000 TL</div>
             </div>
           </div>
         </div>
@@ -382,12 +382,12 @@
         </div>
 
         <div class="form-note">
-          💳 Formu gönderdikten sonra <strong>600 TL ön ödeme</strong> için güvenli ödeme sayfasına yönlendirileceksiniz. Kalan 2.400 TL videonuz teslim edildiğinde ödenecektir.
+          💳 Formu gönderdikten sonra <strong>1.000 TL ön ödeme</strong> için güvenli ödeme sayfasına yönlendirileceksiniz. Kalan 4.000 TL videonuz teslim edildiğinde ödenecektir.
         </div>
 
         <div class="form-submit">
           <button type="submit" class="btn-submit" id="submitBtn">
-            600 TL Ön Ödeme Yap →
+            1.000 TL Ön Ödeme Yap →
           </button>
           <div class="form-guarantee">🔒 Güvenli ödeme · Kartınız korunur · İptal garantisi</div>
         </div>
@@ -427,8 +427,8 @@
         <p>Video tamamen size aittir. Satış ofisinizde, sosyal medyada ve emlak portallarında kullanabilirsiniz.</p>
       </details>
       <details>
-        <summary>Kalan 2.400 TL'yi ne zaman ödeyeceğim?</summary>
-        <p>Videonuzu teslim aldıktan ve memnun kaldıktan sonra kalan 2.400 TL için size link göndereceğiz.</p>
+        <summary>Kalan 4.000 TL'yi ne zaman ödeyeceğim?</summary>
+        <p>Videonuzu teslim aldıktan ve memnun kaldıktan sonra kalan 4.000 TL için size link göndereceğiz.</p>
       </details>
     </div>
   </div>
@@ -443,7 +443,7 @@
   <div class="modal">
     <div style="font-size:40px;margin-bottom:16px;">💳</div>
     <h3>Ödeme Onayı</h3>
-    <p>Formunuz alındı. Şimdi <strong>600 TL</strong> ön ödeme yaparak siparişinizi onaylayın.<br>Kalan 2.400 TL videonuz teslim edildiğinde ödenecektir.</p>
+    <p>Formunuz alındı. Şimdi <strong>1.000 TL</strong> ön ödeme yaparak siparişinizi onaylayın.<br>Kalan 4.000 TL videonuz teslim edildiğinde ödenecektir.</p>
     <div class="modal-btns">
       <button class="btn-cancel" onclick="closeModal()">İptal</button>
       <a id="paymentLink" href="#" class="btn-pay lemonsqueezy-button" target="_blank">Ödemeye Geç →</a>
@@ -523,7 +523,7 @@
       if (result.checkoutUrl) {
         document.getElementById('paymentLink').href = result.checkoutUrl
         btn.disabled = false
-        btn.textContent = '600 TL Ön Ödeme Yap →'
+        btn.textContent = '1.000 TL Ön Ödeme Yap →'
         openModal()
       } else {
         throw new Error(result.error || 'Hata oluştu')
@@ -531,7 +531,7 @@
     } catch (err) {
       console.error('Hata:', err)
       btn.disabled = false
-      btn.textContent = '600 TL Ön Ödeme Yap →'
+      btn.textContent = '1.000 TL Ön Ödeme Yap →'
       alert('Bir hata oluştu. Lütfen tekrar deneyin veya tvarzmedya@gmail.com adresine yazın.')
     }
   })
@@ -546,5 +546,3 @@
 </script>
 </body>
 </html>
-
-
