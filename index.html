@@ -544,10 +544,13 @@
       btn.textContent = 'Ödemeye Geç →'
 
       if (selectedPaymentMethod === 'shopier') {
+        const shopierUrl = selectedPackage === 'standart'
+          ? 'https://www.shopier.com/Mustakit/47021980'
+          : 'https://www.shopier.com/Mustakit/46435148'
         document.getElementById('paymentModalIcon').textContent = '🛍️'
         document.getElementById('paymentModalTitle').textContent = 'Shopier ile Ödeme'
         document.getElementById('paymentModalDesc').textContent = 'Formunuz alındı. Shopier güvenli ödeme sayfasına yönlendirileceksiniz.'
-        document.getElementById('paymentLink').href = 'https://www.shopier.com/Mustakit/47021980'
+        document.getElementById('paymentLink').href = shopierUrl
         document.getElementById('paymentLink').textContent = 'Shopier\'a Git →'
         openModal()
       } else {
