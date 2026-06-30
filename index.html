@@ -25,7 +25,11 @@
     .logo { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 20px; color: var(--primary); text-decoration: none; }
     .logo span { color: var(--text); font-weight: 400; font-size: 14px; }
     .nav-badge { background: var(--primary); color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
-    .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d1f0e 100%); color: white; padding: 70px 24px; text-align: center; }
+    .hero { position: relative; color: white; padding: 70px 24px; text-align: center; overflow: hidden; }
+    .hero-bg-gradient { position: absolute; inset: 0; background: linear-gradient(135deg, #1a1a1a 0%, #2d1f0e 100%); z-index: 0; }
+    .hero-bg-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.5; z-index: 1; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,26,26,0.7) 0%, rgba(45,31,14,0.7) 100%); z-index: 2; }
+    .hero-content { position: relative; z-index: 3; }
     .hero-badge { display: inline-block; background: rgba(242,100,25,0.2); border: 1px solid rgba(242,100,25,0.5); color: #F26419; font-size: 12px; font-weight: 600; padding: 6px 16px; border-radius: 20px; margin-bottom: 24px; }
     .hero h1 { font-size: clamp(26px, 4.5vw, 42px); font-weight: 800; line-height: 1.15; letter-spacing: -1px; margin-bottom: 16px; }
     .hero h1 span { color: var(--primary); }
@@ -136,9 +140,16 @@
 </nav>
 
 <div class="hero">
-  <div class="hero-badge">🏞️ Arsa &amp; Yapı Projesi Videosu</div>
-  <h1>Arsanız veya projeniz için <span>profesyonel</span><br>tanıtım videosu</h1>
-  <p>Bilgilerinizi doldurun, paketinizi seçin, ödemenizi yapın. 1-2 iş günü içinde videonuz hazır.</p>
+  <div class="hero-bg-gradient"></div>
+  <video class="hero-bg-video" autoplay muted loop playsinline>
+    <source src="/videos/hero-bg.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🏞️ Arsa &amp; Yapı Projesi Videosu</div>
+    <h1>Arsanız veya projeniz için <span>profesyonel</span><br>tanıtım videosu</h1>
+    <p>Bilgilerinizi doldurun, paketinizi seçin, ödemenizi yapın. 1-2 iş günü içinde videonuz hazır.</p>
+  </div>
 </div>
 
 <section>
@@ -157,10 +168,11 @@
         <div class="pkg-body">
           <ul class="pkg-features">
             <li class="yes">30 saniyelik video</li>
-            <li class="yes">Temel video kurgu</li>
+            <li class="yes">Müzikli kurgu</li>
+            <li class="yes">Yazı ve grafikle anlatım</li>
+            <li class="yes">Gerçekçi animasyon</li>
             <li class="no">Seslendirme yok</li>
-            <li class="no">Gerçekçi animasyon yok</li>
-            <li class="no">Drone görüntüsü yok</li>
+            <li class="no">Drone &amp; yapı yerleştirme yok</li>
           </ul>
           <button type="button" class="pkg-select-btn active" onclick="selectPackage('minimal')">Bu Paketi Seç</button>
         </div>
@@ -178,11 +190,12 @@
         </div>
         <div class="pkg-body">
           <ul class="pkg-features">
-            <li class="yes">30 saniyelik video</li>
-            <li class="yes">Profesyonel seslendirme</li>
-            <li class="yes">Projenizin gerçekçi animasyonu</li>
-            <li class="yes">Gerçekçi drone footage</li>
-            <li class="yes">Müzik &amp; ses tasarımı</li>
+            <li class="yes">30-60 saniye arası video</li>
+            <li class="yes">Gerçekçi seslendirme ile detaylı anlatım</li>
+            <li class="yes">Müzikli kurgu</li>
+            <li class="yes">Gerçekçi drone footage (arsa ve yapı)</li>
+            <li class="yes">Gerçekçi animasyonlar</li>
+            <li class="yes">Yazı ve grafikle anlatım</li>
           </ul>
           <button type="button" class="pkg-select-btn" onclick="selectPackage('standart')">Bu Paketi Seç</button>
         </div>
